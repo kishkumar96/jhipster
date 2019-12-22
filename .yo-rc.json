@@ -1,0 +1,58 @@
+{
+  "generator-jhipster": {
+    "promptValues": {
+      "packageName": "com.dcrp.app",
+      "nativeLanguage": "en"
+    },
+    "jhipsterVersion": "6.5.1",
+    "applicationType": "monolith",
+    "baseName": "test2",
+    "packageName": "com.dcrp.app",
+    "packageFolder": "com/dcrp/app",
+    "serverPort": "8080",
+    "authenticationType": "jwt",
+    "cacheProvider": "ehcache",
+    "enableHibernateCache": true,
+    "websocket": "spring-websocket",
+    "databaseType": "sql",
+    "devDatabaseType": "h2Disk",
+    "prodDatabaseType": "mysql",
+    "searchEngine": "elasticsearch",
+    "messageBroker": "kafka",
+    "serviceDiscoveryType": "eureka",
+    "buildTool": "maven",
+    "enableSwaggerCodegen": true,
+    "jwtSecretKey": "MGFmMzNmNjJiMDJhMzIzNjc3Y2ZmMTZkZWQ2Mzg3MmVmMjEyMWVkNTZlZDA1OGZiZjQ1YWQ5ZDUxYzhkNjYwYjdjMTM5MmVmZmIwMjExNTVjNTFlMGY3OWQxZmVlNGJjZGE4YTMxMGU0ZWJiYmYyY2QyMTdkNTE5Njg5YmRmYmY=",
+    "embeddableLaunchScript": false,
+    "testFrameworks": ["gatling", "cucumber", "protractor"],
+    "jhiPrefix": "jhi",
+    "entitySuffix": "",
+    "dtoSuffix": "DTO",
+    "otherModules": [
+      {
+        "name": "generator-jhipster-primereact-blueprint",
+        "version": "1.0.14"
+      }
+    ],
+    "enableTranslation": true,
+    "clientPackageManager": "npm",
+    "nativeLanguage": "en",
+    "languages": ["en", "fr"],
+    "blueprints": [
+      {
+        "name": "generator-jhipster-primereact-blueprint",
+        "version": "1.0.14"
+      }
+    ]
+  },
+  "generator-jhipster-primereact-blueprint": {
+    "jhipsterVersion": "6.5.1",
+    "applicationType": "monolith",
+    "baseName": "test2",
+    "useSass": true,
+    "clientPackageManager": "npm",
+    "clientFramework": "react",
+    "clientTheme": "nova-light",
+    "clientThemeVariant": "light"
+  }
+}

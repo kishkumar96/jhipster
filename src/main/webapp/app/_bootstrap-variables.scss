@@ -1,0 +1,33 @@
+/*
+* Bootstrap overrides https://v4-alpha.getbootstrap.com/getting-started/options/
+* All values defined in bootstrap source
+* https://github.com/twbs/bootstrap/blob/v4-dev/scss/_variables.scss can be overwritten here
+* Make sure not to add !default to values here
+*/
+
+$primary: #005b9f;
+$secondary: #c8c8c8;
+$success: #34a835;
+$info: #005b9f;
+$warning: #ffba01;
+$danger: #e91224;
+$light: #f4f4f4;
+
+// Body
+$body-bg: #ffff;
+$body-color: #495057;
+
+// Fonts
+
+$headings-color: #5c5c5c;
+
+// Dropdowns
+
+$dropdown-link-color: $body-color;
+$dropdown-link-hover-color: #ffff;
+$dropdown-link-hover-bg: $primary;
+
+// Navbar
+
+$navbar-dark-color: rgba(#ffff, 0.8);
+$navbar-dark-hover-color: #ffff;

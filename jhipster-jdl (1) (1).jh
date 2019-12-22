@@ -1,0 +1,221 @@
+/**
+ * The Enter the entity name entity.
+ * @author A true hipster
+ */
+entity Session {
+    /** fieldName */
+   
+   nameOfActivity String
+   location Country
+   startDate LocalDate
+   endDate LocalDate
+   attendeesNumber Integer
+   sessionType SessionType
+   description String
+   comment String
+
+}
+filter Session
+
+
+enum SessionType{
+    IN_COUNTRY_TECHNICAL_ASSISTANCE, INTERNATIONAL_COURSE, NATIONAL_COURSE, NATIONAL_SEMINAR_OR_WORKSHOP, POST_GRAD_CERTIFICATE_PROGRAMS, REGIONAL_COURSE, REGIONAL_SEMINAR_OR_WORKSHOP, SUB_NATIONAL_COURSE
+}
+
+/**
+ * The Enter the entity name entity.
+ * @author A true hipster
+ */
+entity Project {
+    /** fieldName */
+    
+    projectName String
+    objective String
+    workPlan String
+    kra String
+    output String
+    evaluation String
+    budget Float
+    headOffProject String
+    startDate LocalDate
+    endDate LocalDate
+    targetAudience String
+    overviewAboutProject String
+
+}
+
+filter Project
+
+/**
+ * The Entity entity.
+ * @author A true hipster
+ */
+entity ParticipantEntry {
+    /** fieldName */
+    
+    firstName String
+    lastName String
+    country Country
+    gender Gender
+    title Title
+    dateOfBirth LocalDate
+    organization String
+    sector Sector
+    position String
+    contactAddress String
+    workPhone Integer
+    faxNumber Integer
+    homePhone Integer
+    email String
+    previousEmployment String
+    specialGeneral Specialgeneral
+    specialDisasterManagement Specialdisastermanagement
+    educationLevel Educationlevel
+    trainer Trainer
+    comments String
+
+
+}
+
+filter ParticipantEntry
+
+enum Trainer{
+    YES, NO
+}
+
+
+enum Educationlevel {
+    PRIMARY, SECONDARY, TERTIARY, VOCATIONAL
+
+}
+
+enum Specialdisastermanagement {
+    COORDINATION, DAMAGE_ASSEMENT_AND_PLANNING, DISASTER_OPERATION, EDUCATION_AND_TRAINING, HAZARD_ASSEMENT, MITIGATION_AND_PREVENTION,
+    NEEDS_ANALYSIS_AND_IMPLEMENTATION, PREPAREDNESS_PLANNING
+}
+
+enum Specialgeneral {
+    ADMINISTRATION, AGRICULTURE, ARCHITECTURE, BROADCASTING_OR_MEDIA, COMMUNICATIONS, COMMUNITY_DEVELOPMENT, DEFENSE, DISASTER_MANAGEMENT,
+    ECONOMICS, EDUCATION_AND_TRAINING_AND_PUBLIC_AWARENESS, ELECTIRCIAN, FINANCE, FIRE_AND_SEARCH_AND_RESCUE, FIRST_AID_INSTRUCTOR, FOREIGN_AFFAIRS,
+    HEALTH_EDUCATION, LAND_VALUATION, MANAGEMENT, MARITIME, MEDICAL_METEREOLOGICAL_SERVICES, MINERAL_RESOURCES, NATIONAL_PLANNING, POLICE, PRISON_SERVICES,
+    PUBLIC_HEALTH, PUBLIC_WORK_AND_WATER, RED_CROSS, RESEARCH_DEPARTMENT, TRANSPORT
+}
+
+
+
+enum Sector{
+    CIVIL_SERVICE, INTERNATIONAL_ORGANIZATION, NATIONAL_GOVERNMENT, PRIVATE_SECTOR, REGIONAL_ORGANIZATION, OTHERS
+}
+
+enum Title{
+    MR, MRS, DR, HON
+}
+
+enum Gender{
+    MALE, FEMALE
+
+}
+
+enum Country{
+    ANTARTICA, AMERICAN_SAMOA, AUSTRALIA, BELGIUM, BRAZIL, CANADA, SWITZERLAND, COOK_ISLANDS, CHINA, CUBA, GERMANY, DENMARK,
+SPAIN,
+FIJI_ISLANDS,
+FEDERATED_STATES_OF_MICRONESIA,
+FRANCE,
+GUAM,
+GREECE,
+HONG_KONG,
+INDONESIA,
+IRELAND,
+ISRAEL,
+INDIA,
+ITALY,
+JAMAICA,
+JAPAN,
+KENYA,
+KIRIBATI,
+NORTH_KOREA,
+SOUTH_KOREA,
+MARSHALL_ISLANDS,
+NORTHERN_MARIANA_ISLANDS,
+MALTA,
+MAURITIUS,
+MALDIVES,
+MALAYSIA,
+NEW_CALEDONIA,
+NORFOLK_ISLANDS,
+NETHERLANDS,
+NORWAY,
+NAURU,
+NIUE,
+NEW_ZEALAND,
+FRENCH_POLYNESIA,
+PAPUA_NEWGUINEA,
+PHILIPPINES,
+PACIFIC_REGION,
+PUERTO_RICO,
+PALAU,
+ALL_SOPAC_MEMBER_COUNTRIES,
+RUSSIAN_FEDERATION,
+SOLOMON_ISLANDS,
+SEYCHELLES,
+SWEDEN,
+SINGAPORE,
+USSR,
+THAILAND,
+TOKELAU,
+TONGA,
+TRINIDAD_AND_TOBAGO,
+TUVALU,
+TAIWAN,
+UNITED_KINGDOM,
+UNITED_STATES_OF_AMERICA,
+VANUATU,
+WALLIS_AND_FUTUNA,
+WORLD,
+SAMOA,
+SOUTH_AFRICA
+}
+
+
+
+
+/**
+ * The Entity entity.
+ * @author A true hipster
+ */
+entity Course {
+    /** fieldName */
+    
+    courseTitle String
+    method Method
+    duration Integer
+    period Period
+    description String
+    comments String
+}
+
+filter Course
+enum Period {
+    HOURS, DAYS, WEEKS, MONTHS
+}
+
+enum Method {
+    TRAININGCL, TRAINING, WORKSHOP
+}
+
+/**
+ * One to many relationship.
+ */
+relationship OneToMany {
+    Project to Course{project}
+    Course to Session{courseCode}
+
+}
+
+
+relationship ManyToMany {
+    ParticipantEntry{sessionCode} to Session{individualCode}
+}
+
+
